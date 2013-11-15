@@ -1,31 +1,3 @@
-
-```handlebars
-{{#less}}
-<style>
-@foo-border-color: #eee;
-
-// Foo
-.foo {
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 3px solid @foo-border-color;
-}
-</style>
-{{/less}}
-```
-
-Compiles to:
-
-```html
-<style>
-.foo {
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 3px solid #eee;
-}
-</style>
-```
-
 ## Using the dest option
 
 ### HTML and LESS

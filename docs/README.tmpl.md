@@ -8,8 +8,11 @@
 ## Options
 {%= _.doc("docs-options.md") %}
 
-## Examples
+## Usage Examples
 {%= _.doc("docs-examples.md") %}
+
+## Register the Helper
+{%= _.doc("docs-register.md") %}
 
 ## Contributing
 Please see the [Contributing to Assemble](http://assemble.io/contributing) guide for information on contributing to this project.

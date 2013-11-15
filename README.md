@@ -8,43 +8,35 @@ In the root of your project, run the following in the command line:
 ```bash
 npm i handlebars-helper-less --save-dev
 ```
+Example:
 
-### Registering the helper
+```handlebars
+{{#less}}
+<style>
+@foo-border-color: #eee;
 
-If you use [Assemble](http://assemble.io) choose one of the following approaches to register the helper:
-
-#### Option #1: Gruntfile
-
-Define paths to any helpers in the `helpers` option of your project's [Gruntfile](http://gruntjs.com/):
-
-```javascript
-grunt.initConfig({
-  assemble: {
-    options: {
-      helpers: ['handlebars-helper-less']
-    },
-    files: {}
-  }
-});
-```
-
-#### Option #2: Add to devDependencies and keywords
-
-Or, add the helper to the `devDependencies` of your project's package.json, and then add the name of the module, `handlebars-helper-less`, to the keywords:
-
-```json
-{
-  "name": "foo",
-  "dependencies": {
-    "handlebars-helper-less": "*"
-  },
-  "keywords": [
-    "handlebars-helper-less"
-  ]
+// Foo
+.foo {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid @foo-border-color;
 }
+</style>
+{{/less}}
 ```
 
-Assemble will automatically register any helpers found when matching names are defined in both `keywords` and `devDependencies`. It just works.
+Compiles to:
+
+```html
+<style>
+.foo {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+</style>
+```
+
 
 
 ## Options
@@ -100,35 +92,7 @@ assemble: {
 The compiled CSS will be saved to: `css/foo.css`.
 
 
-## Examples
-
-```handlebars
-{{#less}}
-<style>
-@foo-border-color: #eee;
-
-// Foo
-.foo {
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 3px solid @foo-border-color;
-}
-</style>
-{{/less}}
-```
-
-Compiles to:
-
-```html
-<style>
-.foo {
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 3px solid #eee;
-}
-</style>
-```
-
+## Usage Examples
 ### Using the dest option
 
 #### HTML and LESS
@@ -204,6 +168,43 @@ and `dist/assets/css/component.css`
 
 
 
+## Register the Helper
+> If you use [Assemble](http://assemble.io) choose one of the following approaches to register the helper:
+
+#### Option #1: Gruntfile
+
+Define paths to any helpers in the `helpers` option of your project's [Gruntfile](http://gruntjs.com/):
+
+```javascript
+grunt.initConfig({
+  assemble: {
+    options: {
+      helpers: ['handlebars-helper-less']
+    },
+    files: {}
+  }
+});
+```
+
+#### Option #2: Add to devDependencies and keywords
+
+Or, add the helper to the `devDependencies` of your project's package.json, and then add the name of the module, `handlebars-helper-less`, to the keywords:
+
+```json
+{
+  "name": "foo",
+  "dependencies": {
+    "handlebars-helper-less": "*"
+  },
+  "keywords": [
+    "handlebars-helper-less"
+  ]
+}
+```
+
+Assemble will automatically register any helpers found when matching names are defined in both `keywords` and `devDependencies`. It just works.
+
+
 ## Contributing
 Please see the [Contributing to Assemble](http://assemble.io/contributing) guide for information on contributing to this project.
 
@@ -225,4 +226,4 @@ Released under the MIT license
 
 ***
 
-_This file was generated on Fri Nov 15 2013 00:56:04._
+_This file was generated on Fri Nov 15 2013 01:00:52._

@@ -1,7 +1,7 @@
 {
   "name": "handlebars-helper-less",
   "description": "{{less}} handlebars helper. This helper allows you to use LESS inside style tags in your HTML. By default, the resulting CSS will be rendered inside the `<style>...</style>` tags of the rendered HTML, but you may alternatively define a destination path using the `dest` hash option of the helper.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/handlebars-helper-less",
   "author": {
     "name": "Jon Schlinkert",
