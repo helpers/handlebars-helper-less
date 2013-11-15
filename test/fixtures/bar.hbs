@@ -1,0 +1,90 @@
+<!-- code comment -->
+<h1>My Blog</h1>
+<h2>Post of the day</h2>
+
+<!-- scripts -->
+<a href="#">Read more...</a>
+
+
+{{#less}}
+<style>
+//
+// Callouts
+// --------------------------------------------------
+// Callouts require both a base and modifier class.
+
+
+// Variables
+@callout-danger-bg-color:          #fdf7f7;
+@callout-danger-border-color:      #eed3d7;
+@callout-danger-heading-color:     #b94a48;
+
+@callout-warning-bg-color:         #faf8f0;
+@callout-warning-border-color:     #faebcc;
+@callout-warning-heading-color:    #c09853;
+
+@callout-info-bg-color:            #f4f8fa;
+@callout-info-border-color:        #bce8f1;
+@callout-info-heading-color:       #3a87ad;
+
+@callout-success-bg-color:         #fdf7f7;
+@callout-success-border-color:     #eed3d7;
+@callout-success-heading-color:    #eed3d7;
+
+
+
+
+// Base
+.callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+.callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+
+.make-callout(@name; @bg; @border; @heading) {
+  /* Callout */
+  .callout-@{name} {
+    background-color: @bg;
+    border-color: @border;
+  }
+  .callout-@{name} h4 {
+    color: @heading;
+  }
+}
+
+
+// Modifiers
+// ---------------------------------------
+.make-callout(success;
+  @callout-success-bg-color;
+  @callout-success-border-color;
+  @callout-success-heading-color;
+);
+
+.make-callout(info;
+  @callout-info-bg-color;
+  @callout-info-border-color;
+  @callout-info-heading-color;
+);
+
+.make-callout(warning;
+  @callout-warning-bg-color;
+  @callout-warning-border-color;
+  @callout-warning-heading-color;
+);
+
+.make-callout(danger;
+  @callout-danger-bg-color;
+  @callout-danger-border-color;
+  @callout-danger-heading-color;
+);
+</style>
+{{/less}}

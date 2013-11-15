@@ -1,0 +1,39 @@
+---
+title: Home
+description: This text is from the YAML front matter of index.hbs.
+---
+<h1>{{title}}</h1>
+<p>{{description}}</p>
+
+<hr>
+
+less Helper
+
+{{#less dest="callouts.css"}}
+<style>
+
+@callout-success-bg-color:         #fdf7f7;
+@callout-success-border-color:     #eed3d7;
+@callout-success-heading-color:    #eed3d7;
+
+.make-callout(@name; @bg; @border; @heading) {
+  /* Callout */
+  .callout-@{name} {
+    background-color: @bg;
+    border-color: @border;
+  }
+  .callout-@{name} h4 {
+    color: @heading;
+  }
+}
+
+// Modifiers
+// ---------------------------------------
+.make-callout(success;
+  @callout-success-bg-color;
+  @callout-success-border-color;
+  @callout-success-heading-color;
+);
+
+</style>
+{{/less}}

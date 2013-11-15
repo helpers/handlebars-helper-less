@@ -1,0 +1,8 @@
+/* Callout */
+.callout-success {
+  background-color: #fdf7f7;
+  border-color: #eed3d7;
+}
+.callout-success h4 {
+  color: #eed3d7;
+}
